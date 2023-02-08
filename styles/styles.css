@@ -52,8 +52,8 @@
   box-shadow: 0 0 10px rgb(194, 194, 194);
 }
 
-.choices:focus {
-  box-shadow: 0 0 10px rgb(194, 194, 194);
+.form__input._error {
+  box-shadow: 0 0 10px rgb(255, 0, 0);
 }
 
 .form__input::placeholder {
@@ -62,9 +62,18 @@
   font-size: 14px;
 }
 
+.choices:focus {
+  box-shadow: 0 0 10px rgb(194, 194, 194);
+}
+
 .choices {
   border-radius: 5px;
 }
+
+.choices._error {
+  box-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
 
 .choices__inner {
   display: flex;
@@ -94,6 +103,7 @@
 .choices__list--dropdown .choices__placeholder {
   display: none;
 }
+
 
 
 .choices[data-type*=select-one] .choices__inner {
