@@ -5,11 +5,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Form</title>
+  <link rel="preload" href="font/NoirPro-Regular.woff2" as="font">
+  <link rel="preload" href="font/NoirPro-Light.woff2" as="font">
+  <link rel="preload" href="font/NoirPro-Medium.woff2" as="font">
+  <link rel="preload" href="font/NoirPro-Bold.woff2" as="font">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/font.css">
+  <link rel="stylesheet" href="styles/choices.min.css" />
+  <link rel="stylesheet" href="styles/styles.css">
+  <script defer src="js/choices.min.js"></script>
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
+  <section class="form">
+    <form class="form__body" id="form" action="#">
+      <hgroup>
+        <h1 class="form__title">Отправка заявки на участие в семинаре</h1>
+        <p class="form__descr">Организаторы свяжутся с вами для подтверждения записи. <br>
+          Участие в семинаре <em>бесплатное.</em>
+        </p>
+      </hgroup>
 
+      <ul class="form__list">
+        <li class="form__item">
+          <label class="form__label" for="formName">Ваше имя:</label>
+          <input class="form__input" id="formName" type="text" name="name" placeholder="Введите Имя">
+        </li>
+        <li class="form__item">
+          <label class="form__label" for="formEmail">Контактный email:</label>
+          <input class="form__input" id="formEmail" type="text" name="email" placeholder="Введите Email">
+        </li>
+        <li class="form__item">
+          <label class="form__label" for="seminarSelect">Интересующий семинар:</label>
+          <select class="form__select js-choice" id="seminarSelect" name="seminar">
+            <option value="">Выбрать</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="REACT">REACT</option>
+          </select>
+        </li>
+      </ul>
+
+      <div class="form__submit">
+        <label class="form__label-submit" for="fromSubmit">
+          <strong>Все поля обязательные для заполнения.</strong><br>
+          Отправляя заявку вы соглашаетесь с договором публичной оферты и политикой обработки данных.
+        </label>
+        <button class="form__btn" id="fromSubmit" type="submit">Отправить</button>
+      </div>
+    </form>
+  </section>
 </body>
 
 </html>
