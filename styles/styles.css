@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 10px;
 }
 
 .form__body {
@@ -166,4 +167,21 @@
 
 .form__btn:hover {
   background-color: #1c3244;
+
+}
+
+@media (max-width: 600px) {
+  .form__title {
+    font-size: 26px;
+  }
+
+  .form__submit {
+    flex-direction: column;
+  }
+
+  .form__label-submit {
+    margin-right: 0;
+    margin-bottom: 10px;
+
+  }
 }

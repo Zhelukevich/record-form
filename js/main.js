@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
 
     let error = formValidate(form);
-
     let formData = new FormData(form);
 
     if (error === 0) {
@@ -22,17 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
       let response = await fetch('sendmail.php', {
         method: 'POST',
         body: formData
-      })
+      });
+
       if (response.ok) {
         let result = await response.json();
         alert(result.message);
-        formPreview.innerHTML = '';
         form.reset();
         form.classList.remove('_sending');
       } else {
-        alert('Ошибка')
+        alert('Ошибка');
         form.classList.remove('_sending');
       }
+
     } else {
       alert('Заполните форму!')
     }
